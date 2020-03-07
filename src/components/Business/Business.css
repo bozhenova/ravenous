@@ -34,6 +34,16 @@
   justify-content: space-between;
 }
 
+.Business-address a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Business-address a:hover,
+.Business-address a:focus {
+  color: #cca353;
+}
+
 .Business-reviews {
   display: flex;
   flex-direction: column;

@@ -5,17 +5,20 @@ import './Business.css';
 
 class Business extends React.Component {
   render() {
+    const address = `https://www.google.com/maps/place/${this.props.business.address} ${this.props.business.city} ${this.props.business.state} ${this.props.business.zipCode}`;
     return (
       <div className="Business">
         <div className="image-container">
-          <img src={this.props.business.imageSrc} alt='pizza' />
+          <a href={this.props.business.url} target="_blank" rel="noopener noreferrer"><img src={this.props.business.imageSrc} alt="restaurant" /></a>
         </div>
         <h2>{this.props.business.name}</h2>
         <div className="Business-information">
           <div className="Business-address">
-            <p>{this.props.business.address}</p>
-            <p>{this.props.business.city}</p>
-            <p>{this.props.business.state} {this.props.business.zipCode}</p>
+            <a href={address} target="_blank" rel="noopener noreferrer">
+              <p>{this.props.business.address}</p>
+              <p>{this.props.business.city}</p>
+              <p>{this.props.business.state} {this.props.business.zipCode}</p>
+            </a>
           </div>
           <div className="Business-reviews">
             <h3>{this.props.business.category}</h3>
@@ -23,7 +26,7 @@ class Business extends React.Component {
             <p>{this.props.business.reviewCount}</p>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }
